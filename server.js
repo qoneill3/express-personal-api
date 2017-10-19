@@ -68,7 +68,7 @@ app.get('/api/profile', function(req, res) {
 
 //Music index GET
 app.get('/api/music', function(req, res) {
-  db.Music.find()(function(err, music) {
+  db.Music.find({}, function(err, music) {
     if (err) {return console.log("Error: " + err); }
     res.json(music);
   });

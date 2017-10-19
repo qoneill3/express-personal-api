@@ -43,10 +43,14 @@ var music_list = [
 }
 ];
 
-db.Music.create(music_list, function(err, music) {
+db.Music.remove({}, function(err) {
+	db.Music.create(music_list, function(err, music_list) {
 	if (err) {
 		return console.log("Error:", err);
 	}
-	console.log("Created new music", music._id);
+	console.log("Created new music", music_list);
 	process.exit();
 });
+
+});
+
