@@ -96,7 +96,7 @@ app.post('/api/music', function(req, res) {
     if (err) {
       return console.log("Save error " + err);
     }
-    console.log("Saved " + movie.song);
+    console.log("Saved " + music.song);
     res.json(music);
   });
 });
@@ -112,7 +112,7 @@ app.put('/api/music/:id', function(req, res) {
     music.album = req.body.album;
     music.song = req.body.song;
     music.date = req.body.date;
-    msuic.save();
+    music.save();
     res.json(music);
   });
 });
